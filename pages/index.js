@@ -2,11 +2,19 @@ import React from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
 import Nav from '../components/nav'
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button'
 
 const Home = () => (
   <div>
     <Head>
       <title>Home</title>
+      <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous"
+      />
     </Head>
 
     <Nav />
@@ -33,20 +41,35 @@ const Home = () => (
       <div className='row'>
         <Link href='#'>
           <a className='result-card'>
-            <h3>CJ's Diner - click the card for directions</h3>
+            <h3>CJ's Diner</h3>
             <div className="row">
               <div className="left">
                 <h4 className="result-rank">1</h4>
-                <h5 className="location-header">Location:</h5>
-                <p>1111 2nd Ave. Seattle, WA 98111</p>                
+                <h5 className="result-header">Location:</h5>
+                <p>1111 2nd Ave. Seattle, WA 98111</p>
               </div>
               <div className="right">
+                <h5 className="result-header">Distance:</h5>
                 <p>0.2 mi</p>
+                <h5 className="result-header">Rating:</h5>
                 <p>Yelp - 4.5/5</p>
               </div>
             </div>
           </a>
         </Link>
+      </div>
+      <div className="row">
+        <Card style={{ width: '18rem' }}>
+          <Card.Img variant="top" src="holder.js/100px180" />
+          <Card.Body>
+            <Card.Title>Card Title</Card.Title>
+            <Card.Text>
+              Some quick example text to build on the card title and make up the bulk of
+              the card's content.
+            </Card.Text>
+            <Button variant="primary">Go somewhere</Button>
+          </Card.Body>
+        </Card>
       </div>
     </div>
 
@@ -75,12 +98,10 @@ const Home = () => (
       }
       .left {
         max-width: 50%;
-        background-color: red;
         padding: 5px;
       }
       .right {
         max-width: 50%;
-        background-color: green;
         padding: 5px;
       }
       .card {
@@ -130,7 +151,7 @@ const Home = () => (
       }
       .result-card p {
         margin: 0;
-        padding: 12px 0 0;
+        padding: 0;
         font-size: 14px;
         color: #fff;
       }
@@ -147,11 +168,14 @@ const Home = () => (
         width: 20px;
         padding: 5px;
       }
-      .location-header {
+      .result-header {
         font-weight: bold;
         font-size: 16px;
         text-transform: uppercase;
         margin: 0;
+      }
+      .result-header > p {
+        margin-top: 0; 
       }
     `}</style>
   </div>
