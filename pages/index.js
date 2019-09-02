@@ -36,7 +36,8 @@ const Home = () => (
             <h3>CJ's Diner - click the card for directions</h3>
             <div className="row">
               <div className="left">
-                <p>1</p>
+                <h4 className="result-rank">1</h4>
+                <h5 className="location-header">Location:</h5>
                 <p>1111 2nd Ave. Seattle, WA 98111</p>                
               </div>
               <div className="right">
@@ -44,27 +45,6 @@ const Home = () => (
                 <p>Yelp - 4.5/5</p>
               </div>
             </div>
-          </a>
-        </Link>
-      </div>
-
-      <div className='row'>
-        <Link href='https://github.com/zeit/next.js#getting-started'>
-          <a className='card'>
-            <h3>Getting Started &rarr;</h3>
-            <p>Learn more about Next.js on GitHub and in their examples</p>
-          </a>
-        </Link>
-        <Link href='https://github.com/zeit/next.js/tree/master/examples'>
-          <a className='card'>
-            <h3>Examples &rarr;</h3>
-            <p>Find other example boilerplates on the Next.js GitHub</p>
-          </a>
-        </Link>
-        <Link href='https://github.com/zeit/next.js'>
-          <a className='card'>
-            <h3>Create Next App &rarr;</h3>
-            <p>Was this tool helpful? Let us know how we can improve it!</p>
           </a>
         </Link>
       </div>
@@ -96,11 +76,12 @@ const Home = () => (
       .left {
         max-width: 50%;
         background-color: red;
-        padding: 10px;
+        padding: 5px;
       }
       .right {
         max-width: 50%;
         background-color: green;
+        padding: 5px;
       }
       .card {
         padding: 18px 18px 24px;
@@ -147,11 +128,30 @@ const Home = () => (
         color: #fff;
         font-size: 18px;
       }
-      .result=card p {
+      .result-card p {
         margin: 0;
         padding: 12px 0 0;
-        font-size: 13px;
+        font-size: 14px;
         color: #fff;
+      }
+      .result-rank {
+        font-size: 25px;
+        margin: 0;
+        position: relative;
+        top: -20px;
+        left: -20px;
+        transform: rotate(10deg);
+        text-align: center;
+        border: 3px dashed #fff;
+        border-radius: 50%;
+        width: 20px;
+        padding: 5px;
+      }
+      .location-header {
+        font-weight: bold;
+        font-size: 16px;
+        text-transform: uppercase;
+        margin: 0;
       }
     `}</style>
   </div>
